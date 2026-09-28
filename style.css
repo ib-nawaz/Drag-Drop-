@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: #eaf3ff;
+
+    padding: 12px;
+}
+
+
+.game {
+    width: 100%;
+    max-width: 520px;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow: 0 15px 40px rgba(50, 90, 130, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+
+h1 {
+    font-size: clamp(30px, 6vw, 45px);
+
+    color: #225adf;
+
+    line-height: 1;
+}
+
+.subtitle {
+    font-size: clamp(12px, 2.5vw, 15px);
+
+    color: #ffd138;
+
+    margin-top: 5px;
+
+    margin-bottom: clamp(15px, 4vh, 30px);
+}
+
+.restart {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 75px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(0, 68, 255);
+
+    background: #eff5ff;
+
+    border: none;
+    outline: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition: transform 0.15s;
+}
+
+.restart:active {
+    transform: scale(0.9);
+}
+
+
+
+.board {
+    width: min(330px, 75vw);
+
+    aspect-ratio: 1 / 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+}
+
+.cell {
+    min-width: 0;
+    min-height: 0;
+
+    border: 2px dashed #9bc6ff;
+
+    border-radius: 12px;
+
+    background: #fbfdff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: clamp(30px, 8vw, 55px);
+
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+
+
+.pieces {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 16px;
+
+    background: #edf5ff;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+.pieces p {
+    color: #294d7c;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+
+.piece-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    overflow: hidden;
+}
+
+
+
+.piece {
+    width: 50px;
+    height: 50px;
+
+    /*
+       flex-shrink: 0 ki jagah
+       fixed flex-basis use kiya hai
+    */
+    flex: 0 0 50px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: white;
+
+    border-radius: 12px;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    cursor: grab;
+
+    box-shadow: 0 5px 15px rgba(50, 90, 130, 0.12);
+
+    touch-action: none;
+
+    user-select: none;
+}
+
+
+.x-piece {
+    color: #1677ff;
+}
+
+.o-piece {
+    color: #ff3d70;
+}
